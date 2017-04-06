@@ -1,0 +1,70 @@
+$bg-color: #74AFAD;
+$selected-bg-color: #9ec7c6;
+$font-color: #ECECEA;
+$font-hover-color: #dbdbd7;
+$highlight-color: #D9853B;
+$primary-color: #D9853B;
+$primary-color-hover: #c16e25;
+
+#lists-container {
+	background-color: $bg-color;
+	height: 100%;
+
+	.lists-title {
+		padding-top: 2rem;
+		padding-bottom: 1rem;
+		color: $font-color;
+		font-size: 200%;
+	}
+
+	.user {
+		color: $font-color;
+		font-size: 100%;
+	}
+
+	i {
+		color: $font-color;
+	}
+
+	i:hover {
+		color: $primary-color;
+	}
+
+	-webkit-box-shadow: 5px 0px 5px 0px rgba(73,105,103,1);
+	-moz-box-shadow: 5px 0px 5px 0px rgba(73,105,103,1);
+	box-shadow: 5px 0px 5px 0px rgba(73,105,103,1);
+}
+
+ul {
+	list-style: none;
+	padding: 0px 0px 0px 0px;
+
+	li {
+		font-size: 175%;
+		color: $font-color;
+		font-weight: 300;
+		border-bottom: 1px solid #9ec7c6;;
+
+		.selected {
+			background-color: $selected-bg-color;
+		}
+
+		a {
+			color: $font-color;
+		}
+
+		a:hover, a:focus {
+			text-decoration: none;
+		}
+	}	
+}
+
+div {
+	.list-item:hover {
+		background-color: $selected-bg-color;
+	}
+}
+
+.list-item {
+	overflow: hidden;
+}

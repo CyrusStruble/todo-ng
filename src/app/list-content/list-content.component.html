@@ -1,0 +1,73 @@
+<div *ngIf="list" class="todos-container">
+	<div class="todos-header">
+		<div class="row no-gutters">
+			<div class="col-lg">
+				<div class="list-header text-center pt-4 pb-4">
+					<span id="list-title">
+						{{list.title}}
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="row no-gutters">
+			<div class="col-lg">
+				<div id="new-todo-container" class="w-100">
+					<div class="input-group pl-3 pr-3 pt-1 pb-3">
+						<span class="input-group-btn">
+							<button (click)="createTodo(todoDescription.value); todoDescription.value =''" class="btn btn-primary"><span class="fa fa-plus"></span></button>
+						</span>
+						<input #todoDescription (keyup.enter)="onEnter(todoDescription.value); todoDescription.value = ''" class="form-control" placeholder="Description" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="todos-body">
+		<div class="row no-gutters">
+			<div class="col-lg">
+				<ul class="todo-list">
+					<li *ngFor="let todo of todoService.todos | async | todoStatus: 'incomplete'">
+						<div class="todo-item">
+							<span role="button" class="complete-todo fa fa-check float-sm-left" title="Mark item as complete"
+							(click)="toggleTodo(todo)"></span> 
+							{{todo.description}}
+							<span role="button" class="delete-todo fa fa-trash float-sm-right" title="Delete todo"
+							(click)="deleteTodo(todo)"></span>
+						</div>
+					</li>
+				</ul>
+				<span class="show-complete-todos fa float-lg-left ml-5"  title="Show or hide complete todos"
+					[ngClass]="{ 'fa-eye': incompleteVisible, 'fa-eye-slash': !incompleteVisible }"
+					(click)="incompleteVisible = !incompleteVisible">
+				</span>
+			</div>
+		</div>
+
+		<div class="row no-gutters">
+			<div class="col-lg">
+				<ul class="todo-list todo-list-complete" [ngClass]="{'hidden': !incompleteVisible}">
+					<li *ngFor="let todo of todoService.todos | async | todoStatus: 'complete'">
+						<div class="todo-item">
+							<span role="button" class="complete-todo fa fa-times float-sm-left" title="Mark todo as incomplete"
+							(click)="toggleTodo(todo)"></span> 
+							<s>{{todo.description}}</s>
+							<span role="button" class="delete-todo fa fa-trash float-sm-right" title="Delete todo"
+							(click)="deleteTodo(todo)"></span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div *ngIf="showWelcome" class="welcome-message">
+	<h1>Welcome {{ currentUser.firstName }} {{ currentUser.lastName }},</h1>
+	<h3>Create a new list to get started.</h3>
+</div>
+<footer class="footer w-50 mt-2">
+	<div class="container">
+		<p class="footer-text pl-1">&copy; <a href="#">Cyrus Struble</a> 2017</p>
+	</div>
+</footer>

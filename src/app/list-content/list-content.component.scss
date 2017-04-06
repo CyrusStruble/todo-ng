@@ -1,0 +1,118 @@
+$bg-header-color: #74AFAD;
+$bg-color: #dfeceb;
+$font-color: #ECECEA;
+$border-color: #afcfcd;
+$highlight-color: #D9853B;
+$highlight-border-color: #d67a29;
+
+$primary-color: #D9853B;
+$primary-color-hover: #c16e25;
+$secondary-color: #e1796b;
+$secondary-color-hover: #d85341;
+$tertiary-color: #8c8c8c;
+$tertiary-color-hover: #666666;
+
+.list-header, #new-todo-container{
+	background-color: $bg-header-color;
+	color: $font-color;
+}
+
+.welcome-message {
+	
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+
+	width: 40%;
+
+	background-color: #74AFAD;
+
+	text-align: center;
+	color: $font-color;
+
+	-webkit-box-shadow: 13px 14px 41px -7px rgba(73,105,103,1);
+	-moz-box-shadow: 13px 14px 41px -7px rgba(73,105,103,1);
+	box-shadow: 13px 14px 41px -7px rgba(73,105,103,1);
+}
+
+.todos-container {
+	background-color: $bg-color;
+
+	margin-top: 2em;
+	margin-left: 2em;
+	margin-right: 2em;
+	margin-bottom: 1em;
+
+	height: 90%;
+
+	-webkit-box-shadow: 13px 14px 41px -7px rgba(73,105,103,1);
+	-moz-box-shadow: 13px 14px 41px -7px rgba(73,105,103,1);
+	box-shadow: 13px 14px 41px -7px rgba(73,105,103,1);
+
+	.todos-body {
+		height: 80%;
+		overflow-y: auto;
+	}
+}
+
+#list-title {
+	font-size: 160%;
+	font-weight: 400;
+}
+
+.todo-list {
+	list-style: none;
+	padding-left: 0px;
+
+	li {
+		padding-top: 1rem;
+
+		.todo-item {
+			font-size: 120%;
+			border-bottom: 1px solid $border-color;
+			padding-top: 0.5rem;
+			padding-bottom: 0.5rem;
+
+			.complete-todo {
+				padding-right: 1rem;
+				padding-left: 1rem;
+				cursor: default;
+				color: $primary-color;
+			}
+
+			.complete-todo:hover {
+				color: $primary-color-hover;
+			}
+
+			.delete-todo {
+				padding-right: 2rem;
+				cursor: default;
+				color: $secondary-color;
+			}
+
+			.delete-todo:hover {
+				color: $secondary-color-hover;
+
+			}
+		}
+	}
+}
+
+.show-complete-todos {
+	font-size: 125%;
+	cursor: default;
+	color: $tertiary-color;
+}
+
+.show-complete-todos:hover {
+	color: $tertiary-color-hover;
+}
+
+.hidden {
+	display: none;
+}

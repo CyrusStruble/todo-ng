@@ -1,0 +1,47 @@
+
+<div class="row h-100 w-100">
+	<div id="lists-container" class="ml-2 pl-0 pr-0 h-100 w-100">
+		<div class="row">
+			<div class="col-lg">
+				<h1 class="lists-title text-center">TodoNG</h1>
+				<h6 class="user text-center">Welcome, {{ currentUser.username }}
+					<a [routerLink]="['/login']" class="pl-1"><i class="fa fa-sign-out"></i></a>
+				</h6>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg">
+				<div class="new-list-container mt-3 mb-3">
+					<div class="input-group pl-3 pr-3">
+						<span class="input-group-btn">a
+							<button (click)="createList(listName.value); listName.value = ''" 
+								class="btn btn-primary">
+								<span class="fa fa-plus"></span>
+							</button>
+						</span>
+						<input #listName 
+							(keyup.enter)="onEnter(listName.value); listName.value = ''" 
+							class="form-control" placeholder="List name" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg">
+				<ul class="navbar-nav">
+					<li *ngFor="let list of lists"
+						(click)="onSelect(list)">
+						<div class="list-item pb-1 pt-1 pl-1 pr-1" [class.selected]="list === selectedList">
+							<span class="pl-4">
+								{{list.title}}
+								<a (click)="deleteList(list)" class="float-sm-right pr-2 pt-2"><i class="fa fa-trash"></i></a>
+							</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

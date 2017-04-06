@@ -1,0 +1,119 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+$open-sans: 'Open Sans', sans-serif;
+
+$bg-color: #558C89;
+$primary-color: #D9853B;
+$primary-color-hover: #c16e25;
+$font-color: #ECECEA;
+
+.btn-primary {
+	background-color: $primary-color;
+	border-color: $primary-color;
+}
+
+.btn-primary:hover, 
+.btn-primary:active {
+	background-color: $primary-color-hover;
+	border-color: $primary-color-hover;
+
+}
+
+.btn-primary:focus {
+	-webkit-box-shadow: 0 0 0 2px rgba(217, 133, 59, 0.5);
+	box-shadow: 0 0 0 2px rgba(217, 133, 59, 0.5);
+}
+
+.form-control:focus {
+	border-color: $primary-color;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8x rgba(217, 133, 59, 0.7);
+}
+
+body, html {
+	height: 100%;
+	background-color: $bg-color;
+}
+
+a {
+	font-family: $open-sans;
+	font-size: 16px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 23px;
+
+	color: $font-color;
+}
+
+a:hover {
+	color: $font-color;
+}
+
+h1 {
+	font-family: $open-sans;
+	font-size: 25px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 23px;
+}
+
+h3 {
+	font-family: $open-sans;
+	font-size: 19px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 23px;
+}
+
+p {
+	font-family: $open-sans;
+	font-size: 16px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 23px;
+}
+
+blockquote {
+	font-family: $open-sans;
+	font-size: 19px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 23px;
+}
+
+pre {
+	font-family: $open-sans;
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 23px;
+}
+
+.footer-text {
+	color: $font-color;
+	font-weight: 200;
+}
+
+.loader {
+	border: 16px solid #ECECEA;
+	border-top: 16px solid #D9853B;
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -60px;
+	margin-top: -60px;
+	background-size: 100%;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}

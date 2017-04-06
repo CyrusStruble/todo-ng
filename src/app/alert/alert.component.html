@@ -1,0 +1,6 @@
+<div *ngIf="message" class="col-md-10 offset-md-1 mt-1 mb-1" [ngClass]="{'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error'}">
+	{{ message.text }}
+	<button type="button" class="close" aria-label="close" (click)="dismiss()">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
