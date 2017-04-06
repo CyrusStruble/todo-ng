@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { Http, HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Fake backend
-import { fakeBackendProvider } from './_backend/fake-backend';
+import { backendProvider } from './_backend/fake-backend';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
 
@@ -52,7 +52,11 @@ import { TodoStatusPipe } from './_pipes/todo-status.pipe';
 		TodoService,
 		AuthGuard,
 		// Fake backend providers
-		fakeBackendProvider,
+		{
+			provide: Http,
+			deps: [MockBackend, BaseRequestOptions],
+			useFactory: backendProvider
+		},
 		MockBackend,
 		BaseRequestOptions
 	],
