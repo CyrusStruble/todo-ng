@@ -1,7 +1,7 @@
 
-<div class="row h-100 w-100">
-	<div id="lists-container" class="ml-2 pl-0 pr-0 h-100 w-100">
-		<div class="row">
+<div class="row h-100 w-100 no-gutters">
+	<div id="lists-container" class="pl-0 pr-0 h-100 w-100">
+		<div class="row no-gutters">
 			<div class="col-lg">
 				<h1 class="lists-title text-center">TodoNG</h1>
 				<h6 class="user text-center">Welcome, {{ currentUser.username }}
@@ -10,7 +10,7 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row no-gutters">
 			<div class="col-lg">
 				<div class="new-list-container mt-3 mb-3">
 					<div class="input-group pl-3 pr-3">
@@ -28,7 +28,7 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row no-gutters">
 			<div class="col-lg">
 				<ul class="navbar-nav">
 					<li *ngFor="let list of lists"
